@@ -1,11 +1,16 @@
 require "hung_palindrome/version"
 
-class String
+module HunglPalindrome
 
   # Returns true for a palindrome, false otherwise.
   def palindrome?
-    processed_content == processed_content.reverse
+    if processed_content.empty?
+      false
+    else
+      processed_content == processed_content.reverse
+    end
   end
+
 
   # #Returns the letters in the String
   # def letters
@@ -17,7 +22,15 @@ class String
 
     # Returns content for palindrome testing.
     def processed_content
-      self.scan(/[a-z]/i).join.downcase
+      self.scan(/[a-z\d]/i).join.downcase
     end
 
+  end
+
+  class String
+    include HungPalindrome
+  end
+
+  class Integer
+    include HungPalindrome
   end
