@@ -20,6 +20,6 @@ class HungPalindromeTest < Minitest::Test
 
     # assert_equal <expected>, <actual>
     def test_letters
-      assert_equal "MadamImAdam", "Madam, I'm Adam.".letters
+      assert  "MadamImAdam", "Madam, I'm Adam.".palindrome?
     end
 end
